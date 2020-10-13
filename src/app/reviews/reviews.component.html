@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+
+<section class="jumbotron text-center bg-dark">
+  <div class="container">
+    <h1 class="jumbotron-heading text-light">Qazaq Republic reviews</h1>
+    <p class="lead text-light">Honest customer feedback is important to us in order to improve our product.</p>
+  </div>
+</section>
+
+  <div class="col-lg-6 mx-auto text-center form bg-info">
+    <h4 class="display-5 text-truncate" style="text-align: left"> Your name:</h4>
+    <div>
+      <form action="" class="justify-content-center">
+        <div class="form-group">
+          <label class="sr-only">Name</label>
+          <input type="text" #newName class="form-control" placeholder="Write a name">
+        </div>
+        <h4 class="display-5 text-truncate" style="text-align: left">Your reviews:</h4>
+        <div class="form-group">
+          <textarea class="form-control" #newRev id="exampleFormControlTextareal" rows="3" placeholder="Write a reviews"></textarea>
+        </div>
+        <button type="submit"  (click)='handleButtonClick(newName.value, newRev.value)' class="btn btn-dark">Add</button>
+      </form>
+    </div>
+  </div>
+<br>
+<br>
+<h2 class="ml-5 text-center">Reviews:</h2>
+<br>
+
+<app-images></app-images>
+
+<div class="container marketing bg-dark">
+     <ul class="list-group my-3 mx-5">
+       <li class="list-group-item"  *ngFor="let i of reviews"><h5>{{i.name}}</h5><br>{{i.rev}}</li>
+     </ul>
+   </div>
+
+  <app-footer></app-footer>
+

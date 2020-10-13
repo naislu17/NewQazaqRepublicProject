@@ -1,0 +1,65 @@
+<app-nav></app-nav>
+<div class ="container mt-3">
+  <div class="bg-dark">
+    <div class = "row">
+      <div class = "col">
+        <div class="card filters">
+          <div class="card-body">
+            <div class="card-header">
+              <strong>Filters</strong>
+            </div>
+            <form>
+              <div class = "form-group">
+                <label for="from">From</label>
+                <input type="number" id="from" class="form-control">
+              </div>
+              <div class = "form-group">
+                <label for="to">To</label>
+                <input type="number" id="to" class="form-control">
+              </div>
+              <button class="btn btn-primary btn-block btn-sm">Filter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class = "col-md-8">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let i of ['assets/image/ф1.jpg','assets/image/ф2.jpg','assets/image/ф3.jpg','assets/image/tbalck.jpg','assets/image/ф5.jpg','assets/image/ф6.jpg','assets/image/white.jpg','assets/image/tblue.jpg','assets/image/red.jpg']">
+            <div class="card mb-4 shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" src={{i}} />
+              <div class="card-body">
+                <p class="card-text">
+                  <strong> {{100 | currency:'$'}}</strong>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary product-btn">Add to cart</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary product-btn">View details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let i of [1,2,3,4,5]">
+            <div class="cartitem">
+              <span>Item1</span> x <span>9</span> : <strong> {{ 100 | currency : '$'}}</strong>
+            </div>
+          </li>
+          <li class="list-group-item active">
+            <div>Total: {{x | format}} </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+

@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+<app-text></app-text>
+<section class="jumbotron text-center bg-dark">
+  <div class="container">
+    <h1 class="jumbotron-heading text-light">Qazaq Republic</h1>
+    <h2 class="lead text-muted">Choose for yourself and your loved ones</h2>
+    <div class="text-muted">Was created in {{myDate | date:'EEEE, MMMM d, y'}}</div>
+    <br/>
+    <input type="text" [(ngModel)]="name">
+    <p class="text-light">Hello, {{name}}!</p>
+  </div>
+</section>
+<div class="container marketing" style="margin-top:60px">
+  <hr class="featurette-divider bg-dark">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <p class="lead">Saken Zholdas is a well-known Kazakh director and founder of the Qazaq Republic brand, which was launched in 2017 and has already become one of the most recognizable domestic brands. Now the brand has more than 30 points of sale throughout the country and an online store is launching very soon.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="bd-placeholder-img card-img-top" width="100%" src="assets/image/saken.jpg">
+    </div>
+  </div>
+  <hr class="featurette-divider bg-dark">
+</div>
+
+
+<app-footer></app-footer>
+
