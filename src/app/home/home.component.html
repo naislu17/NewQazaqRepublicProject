@@ -2,12 +2,14 @@
 <app-text></app-text>
 <section class="jumbotron text-center bg-dark">
   <div class="container">
-    <h1 class="jumbotron-heading text-light">Qazaq Republic</h1>
+    <div>
+    <h1 class="jumbotron-heading text-light"> {{values}} </h1>
+    </div>
     <h2 class="lead text-muted">Choose for yourself and your loved ones</h2>
     <div class="text-muted">Was created in {{myDate | date:'EEEE, MMMM d, y'}}</div>
     <br/>
     <input type="text" [(ngModel)]="name">
-    <p class="text-light">Hello, {{name}}!</p>
+    <p class="text-light"> Hello,  {{name}}!</p>
   </div>
 </section>
 <div class="container marketing" style="margin-top:60px">

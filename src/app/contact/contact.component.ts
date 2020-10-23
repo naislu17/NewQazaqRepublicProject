@@ -11,6 +11,7 @@ import {
   AfterContentInit, Input, SimpleChanges
 } from '@angular/core';
 
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -18,7 +19,8 @@ import {
 })
 export class ContactComponent implements OnInit {
 
-  constructor(){}
+
+  constructor() {}
 
   ngOnInit(): void {
   }

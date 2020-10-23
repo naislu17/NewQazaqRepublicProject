@@ -15,6 +15,13 @@ import { ImagesComponent } from './reviews/images/images.component';
 import { FirstaddressComponent } from './contact/firstaddress/firstaddress.component';
 import { SecondaddressComponent } from './contact/secondaddress/secondaddress.component';
 import { TextComponent } from './home/text/text.component';
+import { MyserviceService } from './home/nav/myservice.service';
+import {LoggingService} from './services/logging.service';
+import {AllserviceService} from './services/allservice.service';
+
+
+
+
 
 
 const appRoutes: Routes = [
@@ -23,6 +30,8 @@ const appRoutes: Routes = [
   {path: 'reviews', component: ReviewsComponent},
   {path: 'contacts', component: ContactComponent}
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -44,7 +53,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [
+  providers: [MyserviceService, LoggingService,
+    AllserviceService
+    // tslint:disable-next-line:no-unused-expression
   ],
   bootstrap: [AppComponent]
 })
