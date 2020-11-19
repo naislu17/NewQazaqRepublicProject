@@ -18,6 +18,10 @@ import { TextComponent } from './home/text/text.component';
 import { MyserviceService } from './home/nav/myservice.service';
 import {LoggingService} from './services/logging.service';
 import {AllserviceService} from './services/allservice.service';
+import { LoginComponent } from './login/login.component';
+import {AuthGuardService} from './auth-guard.servise';
+import {AuthService} from './auth.service';
+import {DeactivateGuard} from './deactivate-guard.service';
 
 
 
@@ -26,9 +30,10 @@ import {AllserviceService} from './services/allservice.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'item', component: ItemComponent},
-  {path: 'reviews', component: ReviewsComponent},
-  {path: 'contacts', component: ContactComponent}
+  {path: 'item', component: ItemComponent, canActivate : [AuthGuardService]},
+  {path: 'reviews', component: ReviewsComponent, canActivate : [AuthGuardService]},
+  { path: 'login', component: LoginComponent},
+  {path: 'contacts', component: ContactComponent, canDeactivate: [DeactivateGuard]}
 ];
 
 
@@ -46,7 +51,8 @@ const appRoutes: Routes = [
     ImagesComponent,
     FirstaddressComponent,
     SecondaddressComponent,
-    TextComponent
+    TextComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,7 @@ const appRoutes: Routes = [
     FormsModule
   ],
   providers: [MyserviceService, LoggingService,
-    AllserviceService
+    AllserviceService, AuthGuardService, AuthService, DeactivateGuard
     // tslint:disable-next-line:no-unused-expression
   ],
   bootstrap: [AppComponent]

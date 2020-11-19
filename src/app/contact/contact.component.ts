@@ -10,6 +10,7 @@ import {
   AfterContentChecked,
   AfterContentInit, Input, SimpleChanges
 } from '@angular/core';
+import {DeactivateComponent} from '../deactivate-guard.service';
 
 
 @Component({
@@ -17,10 +18,18 @@ import {
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, DeactivateComponent
+{
 
 
-  constructor() {}
+  canExit(): boolean {
+
+    if (confirm('Are you sure to exit without saving everything?')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   ngOnInit(): void {
   }
