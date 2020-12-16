@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+
 import { ContactComponent } from './contact/contact.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ItemComponent } from './item/item.component';
@@ -17,17 +17,26 @@ import { TextComponent } from './home/text/text.component';
 import { MyserviceService } from './home/nav/myservice.service';
 import {LoggingService} from './services/logging.service';
 import {AllserviceService} from './services/allservice.service';
-import { LoginComponent } from './login/login.component';
-import {AuthGuardService} from './auth-guard.servise';
-import {AuthService} from './auth.service';
+
+
+
 import {DeactivateGuard} from './deactivate-guard.service';
 import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {LoginPipe} from './home/nav/login.pipe';
+import {UserService} from './auth/user.service';
+
+import {AuthModule} from './auth/auth.module';
+import {AuthenticationService} from './auth/auth.service';
+import {HomeComponent} from './home/home.component';
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ContactComponent,
     ReviewsComponent,
     ItemComponent,
@@ -38,16 +47,15 @@ import {AppRoutingModule} from './app-routing.module';
     FirstaddressComponent,
     SecondaddressComponent,
     TextComponent,
-    LoginComponent
-  ],
+    LoginPipe, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule, HttpClientModule, AuthModule
   ],
   providers: [MyserviceService, LoggingService,
-    AllserviceService, AuthGuardService, AuthService, DeactivateGuard
-    // tslint:disable-next-line:no-unused-expression
+    AllserviceService,
+    DeactivateGuard,  UserService, AuthenticationService
   ],
   exports: [
     TextComponent,

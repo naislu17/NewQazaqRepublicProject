@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ItemPipe implements PipeTransform {
   transform(value: number, args?: any): string {
 
-    return value.toString().replace(".", ",");
+    return value.toString().replace('.', ',');
   }
 }

@@ -1,0 +1,51 @@
+<form #form = "ngForm" class="text-center border border-light p-5" style="margin: 215px auto; width: 40%">
+
+  <p class="h4 mb-4">Sign up</p>
+
+  <div class="form-row mb-4">
+    <div class="col">
+      <!-- First name -->
+      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" required [(ngModel)]="userDetails.first_name" name = "first_name" #first_name = "ngModel">
+
+      <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+           class="alert alert-danger">
+        <div *ngIf="first_name.errors.required">
+          Name is required.
+        </div>
+      </div>
+
+    </div>
+    <div class="col">
+      <!-- Last name -->
+      <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" required [(ngModel)]="userDetails.last_name" name = "last_name" #last_name = "ngModel">
+      <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)"
+           class="alert alert-danger">
+        <div *ngIf="last_name.errors.required">
+          Last name is required.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-mail -->
+  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" email [(ngModel)]="userDetails.email" name = "email" #email = "ngModel">
+  <div *ngIf="email.invalid && (email.dirty || email.touched)"
+       class="alert alert-danger">
+    <div *ngIf="email.errors.email">
+      Email must be valid!
+    </div>
+  </div>
+  <!-- Password -->
+  <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" [(ngModel)]="userDetails.password" name = "password" minlength="8" aria-describedby="defaultRegisterFormPasswordHelpBlock" #password = "ngModel">
+  <div *ngIf="password.invalid && (password.dirty || password.touched)"
+       class="alert alert-danger">
+    <div *ngIf="password.errors.minlength">
+      Password must contain at least 8 characters!
+    </div>
+  </div>
+
+  <!-- Sign up button -->
+  <button mdbBtn color="dark" (click)="addUser('')" [disabled]="!form.valid" block="true" class="my-4" type="submit">Sign up</button>
+  <hr>
+
+</form>

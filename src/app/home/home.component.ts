@@ -5,12 +5,13 @@ import { Input } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   @Input()  name = '';
   myDate = new Date(2017, 4, 2);
   constructor() { }
   values = '';
-  // tslint:disable-next-line:typedef
+
   ngOnInit() {
     this.values = 'Qazaq Republic';
   }

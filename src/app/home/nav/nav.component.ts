@@ -11,7 +11,6 @@ export class NavComponent implements OnInit {
   constructor(private myservice: MyserviceService) {}
 
   values = '';
-  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.values = 'Qazaq Republic';
     this.todaydate = this.myservice.showTodayDate();

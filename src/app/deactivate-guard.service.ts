@@ -10,7 +10,7 @@ export interface DeactivateComponent {
 
 @Injectable()
 export class DeactivateGuard implements CanDeactivate<any> {
-  // tslint:disable-next-line:ban-types
+
   component: Object;
   route: ActivatedRouteSnapshot;
 

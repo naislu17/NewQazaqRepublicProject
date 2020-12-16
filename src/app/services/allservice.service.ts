@@ -8,7 +8,6 @@ export class AllserviceService {
   constructor(private loggingService: LoggingService) {
   }
 
-  // tslint:disable-next-line:typedef
   getReview() {
     let review: Review[];
     review = [{name: 'Aisana', rev: 'The quality corresponds to the price. Beautiful design. I really liked the combination of colors that shimmer with each other.'},

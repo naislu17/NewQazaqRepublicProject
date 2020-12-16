@@ -1,4 +1,4 @@
-/* tslint:disable:typedef use-lifecycle-interface */
+
 import {
   Component,
   OnDestroy,
